@@ -1,0 +1,41 @@
+.btn--large {
+    background-color: #2c76ff;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0px 3px 3px rgb(0 0 0 / 35%);
+}
+.btn--large:hover, .btn--medium:hover, .btn--small:hover {
+    transition: all 0.3s ease-out;
+}
+
+.btn--medium {
+    background-color: #2c76ff;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 20%);
+}
+
+.btn--small {
+    background-color: #2c76ff;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 20%);
+}
