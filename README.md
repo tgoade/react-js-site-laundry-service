@@ -10,3 +10,5 @@ This website is a personal project built using React js.
 **Authentication:** Firebase  
 **Environment:** Node.js    
 **Graphic Editors:** Photoshop, Illustrator 
+
+More to come...
