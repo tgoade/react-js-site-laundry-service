@@ -6,12 +6,12 @@ const HowItWorks = () => {
         <div className="how-it-works wrapper">
             <h2>How It Works</h2>
             <div className="flex">
-                <Step src="images/schedule-icon.png" text="Schedule Your Pickup" />
-                <Step src="images/pickup-icon.png" text="We Pick Up Your Dirty Laundry" />
-                <Step src="images/delivery-icon.png" text="We Deliver Your Clean Clothes" />
+                <Step src="images/schedule-icon.png" text="Schedule Your Pickup" testid="icon" />
+                <Step src="images/pickup-icon.png" text="We Pick Up Your Dirty Laundry" testid="icon" />
+                <Step src="images/delivery-icon.png" text="We Deliver Your Clean Clothes" testid="icon" />
             </div>
         </div>
     )
 }
 
-export default HowItWorks
+export default HowItWorks;

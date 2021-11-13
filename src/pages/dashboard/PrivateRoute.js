@@ -3,7 +3,7 @@ import { useAuth } from "../../contexts/AuthContext";
 
 // Creating a wrapper for our current route
 const PrivateRoute = ({ component: Component, ...rest }) => {
-    const { currentUser } = useAuth();
+    const { currentUser } = useAuth();          // Pointing to that currentUser state within our Context 
 
     return(
         // Show the component only when the user is logged in

@@ -6,9 +6,9 @@ import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 
 const Login = () => {
-    const emailRef = useRef();                      // Using refs to access email input DOM element to read the input value, which could be accessed as emailRef.current.value
+    const emailRef = useRef();                      
     const passwordRef = useRef();
-    const { login } = useAuth();           // Pointing that signup function from the AuthContext file so we can use that as a part of our form
+    const { login } = useAuth();                    // Pointing that login function within the Context 
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const history = useHistory();

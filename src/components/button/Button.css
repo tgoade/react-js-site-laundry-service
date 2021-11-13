@@ -10,7 +10,7 @@
     cursor: pointer;
     box-shadow: 0px 3px 3px rgb(0 0 0 / 35%);
 }
-.btn--large:hover, .btn--medium:hover, .btn--small:hover {
+.btn--large:hover, .btn--medium:hover, .btn--large:hover {
     transition: all 0.3s ease-out;
 }
 

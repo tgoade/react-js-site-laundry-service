@@ -9,7 +9,7 @@ const Signup = () => {
     const emailRef = useRef();                      // Using refs to access email input DOM element to read the input value, which could be accessed as emailRef.current.value
     const passwordRef = useRef();
     const passwordConfirmRef = useRef();
-    const { signup } = useAuth();           // Pointing that signup function from the AuthContext file so we can use that as a part of our form
+    const { signup } = useAuth();                   // Pointing that signup function within the Context 
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const history = useHistory();
@@ -17,17 +17,19 @@ const Signup = () => {
     async function handleSubmit(e){
         e.preventDefault();
 
+        // To validate the password fields
+
         if (passwordRef.current.value !== passwordConfirmRef.current.value){
-            return setError('Passwords do not match.')          // We return because we want to exit out if there's an error
+            return setError('Passwords do not match.')          // We return because we want to exit out if there's an error, the inputs from the two fields don't match
         }
 
         // Waits for the signup to finish, and if there's a failure, it'll go into the catch block
 
         try {
             setError('');
-            setLoading(true);
-            await signup(emailRef.current.value, passwordRef.current.value);
-            history.push('/dashboard');
+            setLoading(true);                                                       // Setting loading to true so that we can use this to disable our signup button during processing so that the user doesn't keep clicking on it, creating multiple accounts.
+            await signup(emailRef.current.value, passwordRef.current.value);        // Passing in the user input values into that signup function in AuthContext.js
+            history.push('/dashboard');                                             // Using the useHistory hook to redirect us to the dashboard when login is done.
         } catch {
             setError('Failed to create an account');
         }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, Alert } from 'react-bootstrap';
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
-import Button from "../button/Button";
+//import Button from "../button/Button";
 
 const Dashboard = () => {
     const [error, setError] = useState('');
@@ -29,7 +29,7 @@ const Dashboard = () => {
                     <div className="w-100 text-center mb-4">
                         <strong>Email: </strong> {currentUser.email}
                     </div>
-                    <Button path="/update-profile" buttonSize="btn--small" className="w-100">Update Profile</Button>
+                    {/* <Button path="/update-profile" buttonSize="btn--small" className="w-100">Update Profile</Button> */}
                 </Card.Body>
             </Card>
             <div className="w-100 text-center">
