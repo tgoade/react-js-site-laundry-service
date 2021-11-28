@@ -3,6 +3,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
+import { getFirestore, doc, setDoc } from "firebase/firestore"
 
 const AuthContext = React.createContext();      // Creates a context object and it takes in a app/component wide state in ()
 
@@ -18,8 +19,24 @@ export function AuthProvider({children}) {
     const [currentUser, setCurrentUser] = useState();
     const [loading, setLoading] = useState(true);
 
-    function signup(email, password){                                         // Using the auth module from Firebase to create a user
-        return createUserWithEmailAndPassword(auth, email, password);       // Passing in thThis will return a promise
+    function signup(email, password, firstName, lastName, phone){                                         // Using the auth module from Firebase to create a user
+        const db = getFirestore();
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(async function(cred){
+            try {
+                const docRef = await setDoc(doc(db, "users", cred.user.uid), {
+                    first: firstName,
+                    last: lastName,
+                    phone: phone
+                });
+                console.log(`Document written with ID: ${cred.user.uid}`);
+                console.log(`User doc: ${docRef}`)
+              } catch (e) {
+                console.error("Error adding document: ", e);
+              }
+        }).catch(error => {
+            console.log(error);
+        });       // Passing in this will return a promise
     }
 
     function login(email, password){

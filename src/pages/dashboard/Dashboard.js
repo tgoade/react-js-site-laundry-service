@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, Alert } from 'react-bootstrap';
+import { Card, Form, Row, Col, Alert } from 'react-bootstrap';
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 //import Button from "../button/Button";
@@ -30,6 +30,16 @@ const Dashboard = () => {
                         <strong>Email: </strong> {currentUser.email}
                     </div>
                     {/* <Button path="/update-profile" buttonSize="btn--small" className="w-100">Update Profile</Button> */}
+                    <Form>
+                        <Row>
+                            <Col>
+                            <Form.Control placeholder="First name" />
+                            </Col>
+                            <Col>
+                            <Form.Control placeholder="Last name" />
+                            </Col>
+                        </Row>
+                    </Form>
                 </Card.Body>
             </Card>
             <div className="w-100 text-center">
