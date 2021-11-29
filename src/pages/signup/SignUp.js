@@ -70,7 +70,7 @@ const Signup = () => {
                         </Form.Group>
                     </Row>
                     <Form.Group id="phone" className="mt-3" >
-                        <Form.Control type="tel" maxlength="16" placeholder="Cell Phone Number" ref={phoneRef} />
+                        <Form.Control type="tel" maxLength="16" placeholder="Cell Phone Number" ref={phoneRef} />
                     </Form.Group>
                     <button disabled={loading} className="btn--medium w-100 mt-3" type="submit">Sign Up</button>
                 </Form>

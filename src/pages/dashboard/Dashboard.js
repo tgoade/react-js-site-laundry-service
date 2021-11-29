@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, Form, Row, Col, Alert } from 'react-bootstrap';
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
+import Schedule from "./Schedule";
 //import Button from "../button/Button";
 
 const Dashboard = () => {
@@ -24,22 +25,13 @@ const Dashboard = () => {
         <>
             <Card>
                 <Card.Body>
-                    <h2 className="text-center mb-4">Profile</h2>
+                    <h2 className="text-center mb-4">Dashboard</h2>
                     {error && <Alert variant="danger">{error}</Alert>}
                     <div className="w-100 text-center mb-4">
-                        <strong>Email: </strong> {currentUser.email}
+                        <strong>Hello {currentUser.firstName}!</strong> ({currentUser.email})
                     </div>
                     {/* <Button path="/update-profile" buttonSize="btn--small" className="w-100">Update Profile</Button> */}
-                    <Form>
-                        <Row>
-                            <Col>
-                            <Form.Control placeholder="First name" />
-                            </Col>
-                            <Col>
-                            <Form.Control placeholder="Last name" />
-                            </Col>
-                        </Row>
-                    </Form>
+                    <Schedule />
                 </Card.Body>
             </Card>
             <div className="w-100 text-center">

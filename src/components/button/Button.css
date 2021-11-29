@@ -39,3 +39,11 @@
     cursor: pointer;
     box-shadow: 0px 2px 4px rgb(0 0 0 / 20%);
 }
+
+button:disabled, button[disabled] {
+    background-color: #eee;
+    color: #bbb;
+    box-shadow: none;
+    font-weight: normal;
+    cursor: default;
+}

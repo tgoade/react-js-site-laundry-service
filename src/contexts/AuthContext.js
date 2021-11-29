@@ -3,7 +3,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
-import { getFirestore, doc, setDoc } from "firebase/firestore"
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 
 const AuthContext = React.createContext();      // Creates a context object and it takes in a app/component wide state in ()
 
@@ -18,29 +18,36 @@ export function useAuth() {                     // Creating a custom hook to acc
 export function AuthProvider({children}) {                  
     const [currentUser, setCurrentUser] = useState();
     const [loading, setLoading] = useState(true);
+    const [uid, setUid] = useState("")
 
     function signup(email, password, firstName, lastName, phone){                                         // Using the auth module from Firebase to create a user
         const db = getFirestore();
         createUserWithEmailAndPassword(auth, email, password)
-        .then(async function(cred){
+        .then(async function(result){
             try {
-                const docRef = await setDoc(doc(db, "users", cred.user.uid), {
+                const docRef = await setDoc(doc(db, "users", result.user.uid), {
                     first: firstName,
                     last: lastName,
                     phone: phone
                 });
-                console.log(`Document written with ID: ${cred.user.uid}`);
-                console.log(`User doc: ${docRef}`)
-              } catch (e) {
-                console.error("Error adding document: ", e);
-              }
+                console.log(`Document written with ID: ${result.user.uid}`);
+                setUid(result.user.uid);
+            } catch (e) {
+            console.error("Error adding document: ", e);
+            }
         }).catch(error => {
             console.log(error);
         });       // Passing in this will return a promise
     }
 
     function login(email, password){
-        return signInWithEmailAndPassword(auth, email, password);
+        return signInWithEmailAndPassword(auth, email, password)
+                .then(function(result){
+                    console.log(`uid within login: ${result.user.uid}`);
+                    setUid(result.user.uid);
+                }).catch(error => {
+                    console.log(error);
+                });
     }
 
     function logout(){
@@ -70,7 +77,7 @@ export function AuthProvider({children}) {
 
     }, []);
     
-    const value = { currentUser, signup, login, logout, resetPassword }
+    const value = { currentUser, signup, login, logout, resetPassword, uid }
 
     return (
         <AuthContext.Provider value={value}>        {/* Used as a wrapper around all the components that should be able to tap into that context. The value contains all the info that we want to provide with our authentication. */}
