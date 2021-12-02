@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./SignUp.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
+import AuthPanel from "../../components/hero/AuthPanel";
 
 const Signup = () => {
     const emailRef = useRef();                      // Using refs to access email input DOM element to read the input value, which could be accessed as emailRef.current.value
@@ -17,8 +18,23 @@ const Signup = () => {
     const [loading, setLoading] = useState(false);
     const history = useHistory();
 
+    
+
     async function handleSubmit(e){
         e.preventDefault();
+        
+        setError('');
+
+        // To validate phone # input
+        function validPhone(num){
+            let phoneNoFormat = /^(1\s?)?(\d{3}|\(\d{3}\))[\-\s]?\d{3}[\-\s]?\d{4}$/;
+            return phoneNoFormat.test(num)
+        }
+        console.log(validPhone(phoneRef.current.value));
+
+        if (!validPhone(phoneRef.current.value)) {
+            return setError(() => 'Please enter a valid phone number');
+        }
 
         // To validate the password fields
 
@@ -28,6 +44,9 @@ const Signup = () => {
 
         // Waits for the signup to finish, and if there's a failure, it'll go into the catch block
 
+        
+
+        
         
 
         try {
@@ -44,7 +63,7 @@ const Signup = () => {
     }
 
     return (
-        <>
+        <AuthPanel>
           <Card>
             <Card.Body>
                 <h2 className="text-center mb-4">Sign Up</h2>
@@ -76,10 +95,10 @@ const Signup = () => {
                 </Form>
             </Card.Body>
           </Card> 
-          <div className="w-100 text-center mt-2">
+          <div className="w-100 text-center mt-2 crosslink">
             Already have an account? <Link to="/login">Log In</Link>
           </div> 
-        </>
+        </AuthPanel>
     )
 } 
 

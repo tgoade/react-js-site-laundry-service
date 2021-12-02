@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Card, Form, Row, Col, Alert } from 'react-bootstrap';
+import { Card, Alert } from 'react-bootstrap';
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import Schedule from "./Schedule";
-//import Button from "../button/Button";
+import AuthPanel from "../../components/hero/AuthPanel";
 
 const Dashboard = () => {
     const [error, setError] = useState('');
@@ -22,7 +22,7 @@ const Dashboard = () => {
     }
 
     return (
-        <>
+        <AuthPanel>
             <Card>
                 <Card.Body>
                     <h2 className="text-center mb-4">Dashboard</h2>
@@ -34,10 +34,10 @@ const Dashboard = () => {
                     <Schedule />
                 </Card.Body>
             </Card>
-            <div className="w-100 text-center">
+            <div className="w-100 text-center crosslink">
                 <Link to="" onClick={logoutHandler}>Log Out</Link>
             </div>
-        </>
+        </AuthPanel>
     )
 }
 

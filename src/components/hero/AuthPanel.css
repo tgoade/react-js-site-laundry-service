@@ -1,0 +1,7 @@
+.billboard {
+    background: #515151;
+    padding: 35px 0;
+}
+.billboard .crosslink, .billboard .crosslink a {
+    color: #fff;
+}

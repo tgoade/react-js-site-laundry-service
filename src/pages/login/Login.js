@@ -4,36 +4,32 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../signup/SignUp.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
+import "./Login.css";
+import AuthPanel from "../../components/hero/AuthPanel";
 
 const Login = () => {
     const emailRef = useRef();                      
     const passwordRef = useRef();
     const { login } = useAuth();                    // Pointing that login function within the Context 
-    const [error, setError] = useState('');
+    // const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const history = useHistory();
 
     async function handleSubmit(e){
         e.preventDefault();
-
-        try {
-            setError('');
-            setLoading(true);
-            await login(emailRef.current.value, passwordRef.current.value);
-            history.push('/dashboard');
-        } catch {
-            setError('Failed to log in');
-        }
-
-        setLoading(false);
+        // setError('');
+        //setLoading(true);
+        await login(emailRef.current.value, passwordRef.current.value);
+        history.push('/dashboard');
+        //setLoading(false);
     }
 
     return (
-        <>
+        <AuthPanel>
           <Card>
             <Card.Body>
                 <h2 className="text-center mb-4">Log In</h2>
-                {error && <Alert variant="danger">{error}</Alert>}
+                {/* {error && <Alert variant="danger">{error}</Alert>} */}
                 <Form onSubmit={handleSubmit}>
                     <Form.Group id="email">
                         <Form.Label>Email</Form.Label>
@@ -50,10 +46,10 @@ const Login = () => {
                 </div>
             </Card.Body>
           </Card> 
-          <div className="w-100 text-center mt-2">
+          <div className="w-100 text-center mt-2 crosslink">
             Need an account? <Link to="/signup">Sign Up</Link>
           </div> 
-        </>
+        </AuthPanel>
     )
 } 
 

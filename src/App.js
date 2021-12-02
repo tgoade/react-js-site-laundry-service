@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./components/nav/NavBar";
 import Home from "./pages/Home";
-import Schedule from "./pages/Schedule";
 import Signup from "./pages/signup/SignUp";
 import './App.css';
 import Login from "./pages/login/Login";
@@ -18,7 +17,7 @@ function App() {
           <NavBar />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/schedule" exact component={Schedule} />
+            
             <PrivateRoute path="/dashboard" exact component={Dashboard} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />

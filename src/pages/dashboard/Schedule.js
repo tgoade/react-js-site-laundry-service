@@ -20,9 +20,11 @@ const Schedule = () => {
     }
     
     return (
+        
         <Form onSubmit={submitHandler(uid)}>
             <button disabled={loading} className="btn--medium w-100" type="submit">Schedule Pickup Now</button>
         </Form>
+        
     )
 }
 

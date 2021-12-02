@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../signup/SignUp.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
+import AuthPanel from "../../components/hero/AuthPanel";
 
 const ForgotPassword = () => {
     const emailRef = useRef();                      
@@ -30,7 +31,7 @@ const ForgotPassword = () => {
     }
 
     return (
-        <>
+        <AuthPanel>
           <Card>
             <Card.Body>
                 <h2 className="text-center mb-4">Password Reset</h2>
@@ -49,10 +50,10 @@ const ForgotPassword = () => {
                 </div>
             </Card.Body>
           </Card> 
-          <div className="w-100 text-center mt-2">
+          <div className="w-100 text-center mt-2 crosslink">
             Need an account? <Link to="/signup">Sign Up</Link>
           </div> 
-        </>
+        </AuthPanel>
     )
 } 
 
