@@ -4,6 +4,7 @@ import { auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { useHistory } from "react-router-dom";
 
 const AuthContext = React.createContext();      // Creates a context object and it takes in a app/component wide state in ()
 
@@ -18,7 +19,9 @@ export function useAuth() {                     // Creating a custom hook to acc
 export function AuthProvider({children}) {                  
     const [currentUser, setCurrentUser] = useState();
     const [loading, setLoading] = useState(true);
-    const [uid, setUid] = useState("")
+    const [uid, setUid] = useState("");
+    const [errorLogin, setErrorLogin] = useState("");
+    const history = useHistory();
 
     function signup(email, password, firstName, lastName, phone){                                         // Using the auth module from Firebase to create a user
         const db = getFirestore();
@@ -41,12 +44,14 @@ export function AuthProvider({children}) {
     }
 
     function login(email, password){
+        setErrorLogin('');
         return signInWithEmailAndPassword(auth, email, password)
                 .then(function(result){
                     console.log(`uid within login: ${result.user.uid}`);
                     setUid(result.user.uid);
-                }).catch(error => {
-                    console.log(error);
+                }).catch(errorLogin => {
+                    setErrorLogin("Please make sure your email and password are correct.");
+                    history.push('/login');
                 });
     }
 
@@ -77,7 +82,7 @@ export function AuthProvider({children}) {
 
     }, []);
     
-    const value = { currentUser, signup, login, logout, resetPassword, uid }
+    const value = { currentUser, signup, login, logout, resetPassword, uid, errorLogin }
 
     return (
         <AuthContext.Provider value={value}>        {/* Used as a wrapper around all the components that should be able to tap into that context. The value contains all the info that we want to provide with our authentication. */}

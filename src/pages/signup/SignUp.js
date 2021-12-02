@@ -44,11 +44,6 @@ const Signup = () => {
 
         // Waits for the signup to finish, and if there's a failure, it'll go into the catch block
 
-        
-
-        
-        
-
         try {
             setError('');
             setLoading(true);                                                       // Setting loading to true so that we can use this to disable our signup button during processing so that the user doesn't keep clicking on it, creating multiple accounts.

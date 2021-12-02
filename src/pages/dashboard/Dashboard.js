@@ -28,7 +28,7 @@ const Dashboard = () => {
                     <h2 className="text-center mb-4">Dashboard</h2>
                     {error && <Alert variant="danger">{error}</Alert>}
                     <div className="w-100 text-center mb-4">
-                        <strong>Hello {currentUser.firstName}!</strong> ({currentUser.email})
+                        <strong>Hello{currentUser.firstName}!</strong> ({currentUser.email})
                     </div>
                     {/* <Button path="/update-profile" buttonSize="btn--small" className="w-100">Update Profile</Button> */}
                     <Schedule />

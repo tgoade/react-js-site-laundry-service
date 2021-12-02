@@ -10,18 +10,18 @@ import AuthPanel from "../../components/hero/AuthPanel";
 const Login = () => {
     const emailRef = useRef();                      
     const passwordRef = useRef();
-    const { login } = useAuth();                    // Pointing that login function within the Context 
-    // const [error, setError] = useState('');
+    const { login, errorLogin } = useAuth();                    // Pointing that login function within the Context 
     const [loading, setLoading] = useState(false);
     const history = useHistory();
 
     async function handleSubmit(e){
         e.preventDefault();
-        // setError('');
-        //setLoading(true);
+
+        setLoading(true);
         await login(emailRef.current.value, passwordRef.current.value);
         history.push('/dashboard');
-        //setLoading(false);
+        
+        setLoading(false);
     }
 
     return (
@@ -29,7 +29,7 @@ const Login = () => {
           <Card>
             <Card.Body>
                 <h2 className="text-center mb-4">Log In</h2>
-                {/* {error && <Alert variant="danger">{error}</Alert>} */}
+                {errorLogin && <Alert variant="danger">{errorLogin}</Alert>}
                 <Form onSubmit={handleSubmit}>
                     <Form.Group id="email">
                         <Form.Label>Email</Form.Label>
