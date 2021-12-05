@@ -49,8 +49,8 @@ const Faqs = () => {
                 <h2>Frequently Asked Questions</h2>
                
                     {/* <Step src="images/schedule-icon.png" text="Schedule Your Pickup" testid="icon" /> */}
-                    {faqs.map((faq, i) => (
-                        <Question faq={faq} index={i} toggleFaqs={toggleFaqs}/>
+                    {faqs.map((faq, index) => (
+                        <Question faq={faq} index={index} toggleFaqs={toggleFaqs}/>
                     ))}
                 
             </div>
