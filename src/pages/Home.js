@@ -1,4 +1,5 @@
 
+import Faqs from "../components/faqs/Faqs";
 import HeroBanner from "../components/hero/HeroBanner";
 import HowItWorks from "../components/howitworks/HowItWorks";
 import "../components/nav/NavBar.css";
@@ -11,6 +12,7 @@ const Home = () => {
     <>
       <HeroBanner />
       <HowItWorks />
+      <Faqs />
     </>
   );
 }

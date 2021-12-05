@@ -27,7 +27,7 @@ const Signup = () => {
 
         // To validate phone # input
         function validPhone(num){
-            let phoneNoFormat = /^(1\s?)?(\d{3}|\(\d{3}\))[\-\s]?\d{3}[\-\s]?\d{4}$/;
+            let phoneNoFormat = /^(1\s?)?(\d{3}|\(\d{3}\))[-\s]?\d{3}[-\s]?\d{4}$/;
             return phoneNoFormat.test(num)
         }
         console.log(validPhone(phoneRef.current.value));
