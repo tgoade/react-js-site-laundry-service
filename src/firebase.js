@@ -20,6 +20,8 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
+// Using this after adding Firebase database security rules
+
 const firebaseConfig = {
   apiKey: "AIzaSyBkattfp9NJDtcifTaWaHlekzfiDZJd37o",
   authDomain: "auth-development-ce842.firebaseapp.com",
