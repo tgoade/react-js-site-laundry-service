@@ -14,7 +14,7 @@ This website is a personal project built using React js.
 
 ## Live Demo  
 
-[Live App - Hosted on AWS Amplify](https://main.dy26trllym22n.amplifyapp.com/) 
+[Live App, Hosted at AWS Amplify](https://main.dy26trllym22n.amplifyapp.com/) 
 
 Feel free to go through the sign up/login process, "schedule pickup now" and see what happens. Don't worry, I won't actually be picking up your laundry.
 <br />
