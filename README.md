@@ -8,13 +8,13 @@ This website is a personal project built using React js.
 **Languages:** Javascript, JSX, CSS   
 **Frameworks:** React.js  
 **Authentication:** Firebase  
-**Database:** Firestore
+**Database:** Firestore  
 **Environment:** Node.js    
 **Graphic Editors:** Photoshop, Illustrator 
 
 ## Live Demo  
 
-[https://main.dy26trllym22n.amplifyapp.com/](Live App - Hosted on AWS Amplify) 
+[Live App - Hosted on AWS Amplify](https://main.dy26trllym22n.amplifyapp.com/) 
 
 <br />
 <br />
