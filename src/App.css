@@ -33,3 +33,8 @@ h3 {
   text-align: center;
   margin: 100px 0;
 }
+@media (max-width: 767.98px){
+.wrapper {
+  width: 90%;
+}
+}

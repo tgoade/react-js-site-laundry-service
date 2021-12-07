@@ -8,7 +8,7 @@
 .navbar--logo img {
     max-width: 125px;
 }
-.nav--link-wrap {
+.nav--menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -24,4 +24,51 @@
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
+}
+.menu--icon {
+    display: none;
+}
+@media (max-width: 767.98px){
+.menu--icon {
+      display: block;
+      position: absolute;
+      top: -10px;
+      right: 0;
+      transform: translate(-100%, 60%);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+.fa-times {
+    color: #242222;
+    font-size: 2rem;
+    }
+.nav--item {
+    border-top: 1px dotted #555;
+}
+.nav--item a {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+.nav--item a:hover {
+    color: #2BC2FF;
+}
+.nav--menu {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 75px;
+    left: -100%;
+    flex-direction: column;
+    opacity: 1;
+    transition: all 0.5s ease;
+    }
+.nav--menu.active {
+      background: #242222;
+      left: 0;
+      padding: 0 35px;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 1;
+    }
 }

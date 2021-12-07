@@ -23,10 +23,10 @@
 .faqs--question {
     display: flex;
     position: relative;
-    padding: 15px;
+    padding: 15px 0;
     justify-content: space-between;
     cursor: pointer;
-    transition: all 1s ease-in-out;
+    transition: all 2s ease-out;
 }
 .faqs--question p {
     margin-bottom: 0;
@@ -44,7 +44,6 @@
 .open .faqs--answer {
     max-height: 1000px;
     opacity: 1;
-    padding: 15px;
 }
 
 

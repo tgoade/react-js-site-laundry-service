@@ -6,27 +6,27 @@ import Question from "./Question";
 const Faqs = () => {
     const [faqs, setFaqs] = useState([
         {
-            question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus fringilla augue fringilla. ',
+            question: 'Do you service where I live?',
             answer: 'Curabitur sit amet rhoncus sapien.',
             open: false
         }, 
         {
-            question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus fringilla augue fringilla. ',
+            question: 'Do I need to separate my white, colored, and delicate laundry items?',
             answer: 'Curabitur sit amet rhoncus sapien.',
             open: false
         },
         {
-            question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus fringilla augue fringilla. ',
+            question: 'Do I have the option to choose my preferred detegent and fabric softener?',
             answer: 'Curabitur sit amet rhoncus sapien.',
             open: false
         },
         {
-            question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus fringilla augue fringilla. ',
+            question: 'Do I have the option to choose whether my clean clothes be delivered folded or hung?',
             answer: 'Curabitur sit amet rhoncus sapien.',
             open: false
         },
         {
-            question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus fringilla augue fringilla. ',
+            question: 'How will cost be calculated? Is there a minimum charge?',
             answer: 'Curabitur sit amet rhoncus sapien.',
             open: false
         }

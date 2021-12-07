@@ -7,3 +7,18 @@
 .step figure {
     margin: 15px 0 0;
 }
+@media (max-width: 1000px){
+.step--info {
+    padding: 0;
+    margin: 0 auto;
+    width: 90%;
+    }
+}
+@media (max-width: 575.98px){
+.steps {
+    flex-direction: column;
+}
+.step {
+    width: 100%;
+}
+}

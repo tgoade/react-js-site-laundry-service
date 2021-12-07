@@ -8,7 +8,9 @@ const Question = ({faq, index, toggleFaqs}) => {
                 {faq.open ? <i className="fas fa-angle-up"></i> : <i className="fas fa-angle-down"></i>}
             </div>
             <div className="faqs--answer">
-                <p>{faq.answer}</p>
+                <div className="faqs--answer-wrap">
+                    <p>{faq.answer}</p>
+                </div>
             </div>
         </div>
     )
