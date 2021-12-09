@@ -1,14 +1,13 @@
 import { useAuth } from "../../contexts/AuthContext";
 import { useState } from "react";
 import { Form } from 'react-bootstrap';
-//import Button from "../../components/button/Button";
 import Axios from "axios";
 
 const Schedule = () => {
     const [loading, setLoading] = useState(false);
     const { uid } = useAuth();
 
-    function submitHandler(userID){
+    function submitHandler(uid){
         return e => {
         e.preventDefault();
         console.log(`uid with submitHandler: ${uid}`); 

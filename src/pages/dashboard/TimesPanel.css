@@ -1,0 +1,32 @@
+.times--panel {
+    width: 100%;
+    background-color: #ddd;
+    padding: 20px 3%;
+}
+.times--panel-inner {
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+    border-radius: 3px;
+    padding: 15px 0 10px;
+    text-align: center;
+}
+.times--wrap {
+    padding: 20px;
+}
+.times--row{
+    display: flex;
+    justify-content: space-between;   
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.times--col {
+    padding: 20px;
+    align-self: center;
+    font-weight: bold;
+}
+.time::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f017";
+    display: inline-block;
+    padding-right: 7px;
+}

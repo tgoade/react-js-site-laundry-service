@@ -1,0 +1,17 @@
+.react-calendar {
+    width: 100%;
+    margin: 20px auto 0;
+}
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+.crosslink a {
+    display: inline-block;
+    margin: 0 20px;
+}
+#dashboard span {
+    font-weight: bold;
+}
