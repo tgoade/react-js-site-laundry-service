@@ -12,12 +12,12 @@ const Schedule = () => {
         e.preventDefault();
         console.log(`uid with submitHandler: ${uid}`); 
         setLoading(true);
-        Axios.post("http://ad700220bd2214bbbb43cf63ad15e933-711171792.us-west-1.elb.amazonaws.com/pickup", { uid: uid })
+        Axios.post("https://LooseVoluminousLocation.davidgoade.repl.co", { uid: uid })
             .then(res => { console.log(res.data) })
             .catch(error => { console.error("There's an error:", error)})
         }
     }
-    
+    // https://app-bootcamp-davidgoade.twiliobootcamp.repl.co/pickup
     return (
         
         <Form onSubmit={submitHandler(uid)}>
