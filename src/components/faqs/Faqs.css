@@ -23,7 +23,7 @@
 .faqs--question {
     display: flex;
     position: relative;
-    padding: 15px 0;
+    padding: 12px;
     justify-content: space-between;
     cursor: pointer;
     transition: all 2s ease-out;
@@ -33,17 +33,12 @@
     margin-right: 20px;
 }
 .faqs--answer {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease-in-out;
+    display: none;
+    /*transition: all 0.5s ease-in-out;*/
 }
-.open .faqs--question::after {
-    transform: translate(-50%,-50%) rotate(180deg);
-}
-.open .faqs--answer {
-    max-height: 1000px;
-    opacity: 1;
+.faqs--answer.open  {
+    display: block;
+    padding: 12px;
 }
 
 
