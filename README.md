@@ -1,7 +1,7 @@
 
 ## About This Project
 
-This is a personal project developed using React js.  The idea is to provide a service like Doordash or Grubhub, where those who don't want or have time to have their laundry done to have a service that would take care of it without them leaving their house.  The app allows the user to go through the authentication process and receives a text that a driver is coming to pick up their clothes.
+This is a personal project developed using React js.  The idea is to provide a service like Doordash or Grubhub, where those who don't want or have time to have their laundry done to have a service that would take care of it without them leaving their house.  The app allows the user to go through the authentication process and receives a text that a driver will be coming to pick up their clothes.
 
 ## Tech Stack
 

@@ -3,7 +3,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 import { useHistory } from "react-router-dom";
 
 const AuthContext = React.createContext();      // Creates a context object and it takes in a app/component wide state in ()
@@ -18,6 +18,7 @@ export function useAuth() {                     // Creating a custom hook to acc
 // To provide the Context, all components that are wrapped by it should have access to it
 export function AuthProvider({children}) {                  
     const [currentUser, setCurrentUser] = useState();
+    const [firstName, setFirstName] = useState("")
     const [loading, setLoading] = useState(true);
     const [uid, setUid] = useState("");
     const [errorLogin, setErrorLogin] = useState("");
@@ -45,11 +46,23 @@ export function AuthProvider({children}) {
 
     function login(email, password){
         setErrorLogin('');
+        const db = getFirestore();
+        
         return signInWithEmailAndPassword(auth, email, password)
-                .then(function(result){
+                .then(async function(result){
                     console.log(`uid within login: ${result.user.uid}`);
                     setUid(result.user.uid);
-                }).catch(errorLogin => {
+                    const docRef = doc(db, "users", result.user.uid);
+                    const docSnap = await getDoc(docRef);
+                    if(docSnap.exists()){
+                        const doc = docSnap.data();
+                        setFirstName(doc.first);
+                        console.log(firstName);
+                    } else {
+                        console.log('No such document');
+                    }
+                })
+                .catch(errorLogin => {
                     setErrorLogin("Please make sure your email and password are correct.");
                     history.push('/login');
                 });
@@ -82,7 +95,7 @@ export function AuthProvider({children}) {
 
     }, []);
     
-    const value = { currentUser, signup, login, logout, resetPassword, uid, errorLogin }
+    const value = { currentUser, firstName, signup, login, logout, resetPassword, uid, errorLogin }
 
     return (
         <AuthContext.Provider value={value}>        {/* Used as a wrapper around all the components that should be able to tap into that context. The value contains all the info that we want to provide with our authentication. */}

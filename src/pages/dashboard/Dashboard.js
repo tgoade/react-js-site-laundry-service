@@ -11,9 +11,10 @@ import TimesPanel from "./TimesPanel";
 const Dashboard = () => {
     const initialState = null;
     const [error, setError] = useState(initialState);
-    const { currentUser, logout } = useAuth();
+    const { firstName, logout } = useAuth();
     const history = useHistory();
     const [date, setDate] = useState(initialState);
+    
     
     async function logoutHandler(){
         setError('');
@@ -42,11 +43,10 @@ const Dashboard = () => {
         <AuthPanel>
             <Card id="dashboard">
                 <Card.Body>
-                    <h2 className="text-center mb-4">Dashboard</h2>
+                    <h3 className="text-center mt-2 mb-3">Hi {firstName}!</h3>
                     {error && <Alert variant="danger">{error}</Alert>}
                     <div className="w-100 text-center mb-4 intro">
-                        <p><span>Hello{currentUser.firstName}!</span> ({currentUser.email})</p>
-                        <p><span>Please select a pickup date and time</span></p>
+                        <p>Please select a pickup date and time for your laundry to be picked up.</p>
                     </div>
                     {/* <Button path="/update-profile" buttonSize="btn--small" className="w-100">Update Profile</Button> */}
                     
