@@ -1,3 +1,9 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
 h1, h2, h3, h4, h5, p, li {
   color: #333;
   line-height: 1.2;
@@ -32,6 +38,39 @@ h3 {
 .title-404 {
   text-align: center;
   margin: 100px 0;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.w-100 {
+  width: 100%;
+}
+.mt-1 {
+  margin-top: 0;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-3 {
+  margin-top: 1rem;
+}
+.mb-3 {
+  margin-bottom: 1rem;
+}
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+.col-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.col-2 input {
+  width: 48%;
+  display: inline-block;
 }
 @media (max-width: 767.98px){
 .wrapper {

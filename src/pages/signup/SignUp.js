@@ -1,10 +1,11 @@
 import { useRef, useState } from "react";
-import { Form, Card, Row, Col, Alert } from 'react-bootstrap';
-import "bootstrap/dist/css/bootstrap.min.css";
+//import { Form, Card, Row, Col, Alert } from 'react-bootstrap';
+//import "bootstrap/dist/css/bootstrap.min.css";
 import "./SignUp.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import AuthPanel from "../../components/hero/AuthPanel";
+import Card from "../../components/card/Card";
 
 const Signup = () => {
     const emailRef = useRef();                      // Using refs to access email input DOM element to read the input value, which could be accessed as emailRef.current.value
@@ -59,37 +60,32 @@ const Signup = () => {
 
     return (
         <AuthPanel>
-          <Card>
-            <Card.Body>
-                <h2 className="text-center mb-4">Sign Up</h2>
-                {error && <Alert variant="danger">{error}</Alert>}
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group id="email" className="mt-3" >
-                        <Form.Control type="email" placeholder="Email" ref={emailRef} required />
-                    </Form.Group>
-                    <Row className="mt-3" >
-                        <Form.Group as={Col} id="password">
-                            <Form.Control type="password" placeholder="Password" ref={passwordRef} required />
-                        </Form.Group>
+          <Card title="Sign Up">
+                {error && <div class="alert" variant="danger">{error}</div>}
+                <form onSubmit={handleSubmit}>
+                    <div id="email" className="mt-3" >
+                        <input type="email" class="form-control mb-3" placeholder="Email" ref={emailRef} required />
+                    </div>
+                    <div className="mt-3" >
+                        <div id="password">
+                            <input type="password" class="form-control" placeholder="Password" ref={passwordRef} required />
+                        </div>
                         {/* <Form.Group as={Col} id="password-confirm" >
                             <Form.Control type="password" placeholder="Password Confirmation" required />
                         </Form.Group> */}
-                    </Row>
-                    <Row className="mt-3" >
-                        <Form.Group as={Col}>
-                            <Form.Control placeholder="First name" ref={firstNameRef} />
-                        </Form.Group>
-                        <Form.Group as={Col}>
-                            <Form.Control placeholder="Last name" ref={lastNameRef} />
-                        </Form.Group>
-                    </Row>
-                    <Form.Group id="phone" className="mt-3" >
-                        <Form.Control type="tel" maxLength="16" placeholder="Cell Phone Number" ref={phoneRef} />
-                    </Form.Group>
+                    </div>
+                    <div className="mt-3" >
+                        <div class="col-2 mb-3">
+                            <input class="form-control" placeholder="First name" ref={firstNameRef} />
+                            <input class="form-control" placeholder="Last name" ref={lastNameRef} />
+                        </div>
+                    </div>
+                    <div id="phone" className="mt-3" >
+                        <input type="tel" class="form-control mb-3" maxLength="16" placeholder="Cell Phone Number" ref={phoneRef} />
+                    </div>
                     <button disabled={loading} className="btn--medium w-100 mt-3" type="submit">Sign Up</button>
-                </Form>
-            </Card.Body>
-          </Card> 
+                </form>
+          </Card>
           <div className="w-100 text-center mt-2 crosslink">
             Already have an account? <Link to="/login">Log In</Link>
           </div> 

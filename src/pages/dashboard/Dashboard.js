@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, Alert } from 'react-bootstrap';
+//import { Card, Alert } from 'react-bootstrap';
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import AuthPanel from "../../components/hero/AuthPanel";
@@ -41,10 +41,10 @@ const Dashboard = () => {
 
     return (
         <AuthPanel>
-            <Card id="dashboard">
-                <Card.Body>
+            <div class="card" id="dashboard">
+                <div class="card-body">
                     <h3 className="text-center mt-2 mb-3">Hi {firstName}!</h3>
-                    {error && <Alert variant="danger">{error}</Alert>}
+                    {error && <div class="alert" variant="danger">{error}</div>}
                     <div className="w-100 text-center mb-4 intro">
                         <p>Please select a pickup date and time for your laundry to be picked up.</p>
                     </div>
@@ -54,8 +54,8 @@ const Dashboard = () => {
                     
                     <Calendar onChange={dateHandler} value={date} />
                     
-                </Card.Body>
-            </Card>
+                </div>
+            </div>
             <div className="w-100 text-center crosslink">
                 {date && <Link to="/dashboard" onClick={clearState}>Cancel</Link>}
                 <Link to="" onClick={logoutHandler}>Log Out</Link>

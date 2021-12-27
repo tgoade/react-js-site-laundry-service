@@ -1,9 +1,11 @@
 import Step from "./Step";
 import './HowItWorks.css';
 
+
 const HowItWorks = () => {
+
     return (
-        <div className="how-it-works wrapper">
+        <div className="how-it-works">
             <h2>How It Works</h2>
             <div className="flex steps">
                 <Step src="images/schedule-icon.png" text="Schedule Your Pickup" testid="icon" />

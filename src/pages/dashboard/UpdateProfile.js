@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import { Form, Card, Alert } from 'react-bootstrap';
-import "bootstrap/dist/css/bootstrap.min.css";
+//import { Form, Card, Alert } from 'react-bootstrap';
+//import "bootstrap/dist/css/bootstrap.min.css";
 //import "./SignUp.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
@@ -47,27 +47,27 @@ const UpdateProfile = () => {
 
     return (
         <>
-          <Card>
-            <Card.Body>
+          <div class="card">
+            <div class="card-body">
                 <h2 className="text-center mb-4">Update Profile</h2>
-                {error && <Alert variant="danger">{error}</Alert>}
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group id="email">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" ref={emailRef} required defaultValue={currentUser.email} />
-                    </Form.Group>
-                    <Form.Group id="password">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" ref={passwordRef} placeholder="Leave blank to keep the same" />
-                    </Form.Group>
-                    <Form.Group id="password-confirm">
-                        <Form.Label>Password Confirmation</Form.Label>
-                        <Form.Control type="password" ref={passwordConfirmRef} placeholder="Leave blank to keep the same" />
-                    </Form.Group>
+                {error && <div class="alert" variant="danger">{error}</div>}
+                <form onSubmit={handleSubmit}>
+                    <div id="email">
+                        <label>Email</label>
+                        <input type="email" ref={emailRef} required defaultValue={currentUser.email} />
+                    </div>
+                    <div id="password">
+                        <label>Password</label>
+                        <input type="password" ref={passwordRef} placeholder="Leave blank to keep the same" />
+                    </div>
+                    <div id="password-confirm">
+                        <label>Password Confirmation</label>
+                        <input type="password" ref={passwordConfirmRef} placeholder="Leave blank to keep the same" />
+                    </div>
                     <button disabled={loading} className="btn--medium w-100 mt-3" type="submit">Update</button>
-                </Form>
-            </Card.Body>
-          </Card> 
+                </form>
+            </div>
+          </div> 
           <div className="w-100 text-center mt-2">
             <Link to="/dashboard">Cancel</Link>
           </div> 

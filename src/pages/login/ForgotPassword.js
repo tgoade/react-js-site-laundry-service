@@ -1,11 +1,12 @@
 
 import { useRef, useState } from "react";
-import { Form, Card, Alert } from 'react-bootstrap';
-import "bootstrap/dist/css/bootstrap.min.css";
+//import { Form, Card, Alert } from 'react-bootstrap';
+//import "bootstrap/dist/css/bootstrap.min.css";
 import "../signup/SignUp.css";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
 import AuthPanel from "../../components/hero/AuthPanel";
+import Card from "../../components/card/Card";
 
 const ForgotPassword = () => {
     const emailRef = useRef();                      
@@ -32,24 +33,20 @@ const ForgotPassword = () => {
 
     return (
         <AuthPanel>
-          <Card>
-            <Card.Body>
-                <h2 className="text-center mb-4">Password Reset</h2>
-                {error && <Alert variant="danger">{error}</Alert>}
-                {message && <Alert variant="success">{message}</Alert>}
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group id="email">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" ref={emailRef} required />
-                    </Form.Group>
+          <Card title="Password Reset">
+                {error && <div class="alert" variant="danger">{error}</div>}
+                {message && <div class="alert" variant="success">{message}</div>}
+                <form onSubmit={handleSubmit}>
+                    <div id="email">
+                        <input type="email" class="form-control" placeholder="Email" ref={emailRef} required />
+                    </div>
                     
                     <button disabled={loading} className="btn--medium w-100 mt-3" type="submit">Reset Password</button>
-                </Form>
+                </form>
                 <div className="w-100 text-center mt-3">
                     <Link to="/login">Log In</Link>
                 </div>
-            </Card.Body>
-          </Card> 
+          </Card>
           <div className="w-100 text-center mt-2 crosslink">
             Need an account? <Link to="/signup">Sign Up</Link>
           </div> 

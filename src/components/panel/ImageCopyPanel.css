@@ -1,0 +1,21 @@
+.panel--image-copy {
+    display: flex;
+    padding-bottom: 40px;
+    align-items: center;
+}
+.panel--image-copy:first-of-type {
+    padding-top: 40px;
+}
+.panel--image, .panel--copy {
+    width: 50%;
+}
+.panel--copy {
+    padding: 0 50px;
+}
+.image-left {
+    flex-direction: row;
+}
+.copy-left {
+    flex-direction: row-reverse;
+    text-align: right;
+}

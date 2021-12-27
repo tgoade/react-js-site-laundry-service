@@ -45,15 +45,21 @@ export function AuthProvider({children}) {
     }
 
     function login(email, password){
+
         setErrorLogin('');
+
         const db = getFirestore();
         
         return signInWithEmailAndPassword(auth, email, password)
                 .then(async function(result){
+
                     console.log(`uid within login: ${result.user.uid}`);
+
                     setUid(result.user.uid);
-                    const docRef = doc(db, "users", result.user.uid);
+
+                    const docRef = doc(db, "users", result.user.uid);       // Retrieving the document from Firestore
                     const docSnap = await getDoc(docRef);
+                    
                     if(docSnap.exists()){
                         const doc = docSnap.data();
                         setFirstName(doc.first);
