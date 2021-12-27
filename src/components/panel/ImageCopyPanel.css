@@ -9,6 +9,9 @@
 .panel--image, .panel--copy {
     width: 50%;
 }
+.panel--image img {
+    width: 100%;
+}
 .panel--copy {
     padding: 0 50px;
 }
@@ -18,4 +21,15 @@
 .copy-left {
     flex-direction: row-reverse;
     text-align: right;
+}
+@media (max-width: 767.98px) {
+.panel--image-copy {
+    flex-direction: column;
+}
+.panel--image, .panel--copy {
+    width: 100%;
+}
+.copy-left {
+    text-align: left;
+}
 }

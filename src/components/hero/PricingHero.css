@@ -64,3 +64,23 @@
 .pricing--includes ul {
     margin-top: 0;
 }
+@media (max-width: 991.98px){
+.pricing .hero--intro {
+    max-width: 85%;
+}
+}
+@media (max-width: 767.98px) {
+.pricing--section {
+    flex-direction: column;
+}
+.pricing .card {
+    width: 100%;
+}
+.pricing .hero--bg {
+    padding-top: 85px;
+    height: 440px;
+}
+.pricing .hero--intro h1 {
+    font-size: 2rem;
+}
+}
