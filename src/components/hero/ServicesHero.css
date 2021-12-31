@@ -18,7 +18,7 @@ h1 {
 }
 @media (max-width: 991.98px){
 .services--intro {
-    width: 80%;
+    width: 90%;
     padding: 6%;
     margin: 0 auto;
     background-color: rgb(256 256 256 / 93%);

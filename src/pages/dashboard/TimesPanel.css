@@ -30,3 +30,11 @@
     display: inline-block;
     padding-right: 7px;
 }
+@media (max-width: 575.98px) {
+    .times--row {
+        flex-direction: column;
+    }
+    .times--col:last-child {
+        padding-top: 0;
+    }
+}
