@@ -5,7 +5,7 @@
     left: 0;
     padding: 8px 0;
     transition: 0.8s;
-    background-color: rgb(255 255 255 / 100%);
+    background-color: rgb(255 255 255 / 90%);
     box-shadow: 2px 0 10px rgb(41 44 61 / 34%);
     z-index: 100;
 }
@@ -36,7 +36,7 @@
 .nav--item a {
     display: block;
     padding: 30px;
-    color: #000;
+    color: #333;
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;

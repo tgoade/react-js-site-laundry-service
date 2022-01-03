@@ -46,12 +46,12 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav--item">
-                        <Link to="/pricing" className={`nav-link`} aria-label='Contact Link' onClick={closeMenuBars}>
+                        <Link to="/pricing" className={`nav-link`} aria-label='Pricing Link' onClick={closeMenuBars}>
                             Pricing
                         </Link>
                     </li>
                     <li className="nav--item">
-                        <Link to="/login" className={`nav-link`} aria-label='Schedule Link' onClick={closeMenuBars}>
+                        <Link to="/login" className={`nav-link`} aria-label='Login Link' onClick={closeMenuBars}>
                             Login
                         </Link>
                     </li>

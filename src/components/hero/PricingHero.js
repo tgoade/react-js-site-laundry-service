@@ -30,7 +30,7 @@ const PricingHero = () => {
                             <li>consectetur adipiscing</li>
                         </ul>   
                     </div>
-                    <Button className="btn--medium mt-2 mb-3" path="../login">Schedule Service</Button>
+                    <Button className="btn--medium mt-2 mb-3" ariaLabel="schedule button 1" path="../login">Schedule Service</Button>
                 </Card>
                 <Card title="Weekly" className="text-center">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -49,7 +49,7 @@ const PricingHero = () => {
                             <li>hendrerit tincidunt</li>
                         </ul>   
                     </div>
-                    <Button className="btn--medium mt-2 mb-3" path="../login">Schedule Service</Button>
+                    <Button className="btn--medium mt-2 mb-3" ariaLabel="schedule button 2" path="../login">Schedule Service</Button>
                 </Card>
                 <Card title="Dry Cleaning" className="text-center">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -78,7 +78,7 @@ const PricingHero = () => {
                             </div>
                         </div>
                     </div>
-                    <Button className="btn--medium mt-2 mb-3" path="../login">Schedule Service</Button>
+                    <Button className="btn--medium mt-2 mb-3" ariaLabel="schedule button 3" path="../login">Schedule Service</Button>
                 </Card>
             </div>
         </div>

@@ -1,8 +1,18 @@
 .step {
-    width: 33%;
+    width: 30%;
+}
+.steps {
+    justify-content: space-evenly;
 }
 .step--info {
-    padding: 12px 90px;
+    padding: 18px 0;
+    text-align: left;
+}
+.step h3 {
+    margin: 15px 0 10px;
+}
+.step p {
+    margin-top: 0;
 }
 .step figure {
     margin: 15px 0 0;

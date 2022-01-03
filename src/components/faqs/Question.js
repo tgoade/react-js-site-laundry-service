@@ -24,21 +24,21 @@ const Question = () => {
 
     return (
         <div className="faqs--container wrapper">
-            {preparedData && preparedData.map((data) => (
+            {preparedData && preparedData.map((data, index) => (
                 <div key={data.id} className="faqs--question-wrap">
                     <div className={`faqs--qa`} onClick={()=>{faqHandler(data.id, data.image)}}>
-                        <div className="faqs--question" aria-label={`question`}>
+                        <div className="faqs--question" aria-label={`question${index}`}>
                             <p>{data.question}</p>
                             {activeQ === data.id ? <i className="fas fa-angle-up"></i> : <i className="fas fa-angle-down"></i>}
                         </div>
-                        <div className={`faqs--answer ${activeQ === data.id ? "open" : ""}`} aria-label={`answer`}>
+                        <div className={`faqs--answer ${activeQ === data.id ? "open" : ""}`} aria-label={`answer${index}`}>
                             <div className="faqs--answer-wrap">
                                 <p>{data.answer}</p>
                             </div>
                         </div>
                     </div>
                     <div className="faqs--image">
-                        <img src={activeQ ? data.image : displayImg} alt="" className={(activeQ === data.id) || activeQ === null ? "active-slide" : ""}/>
+                        <img src={activeQ ? data.image : displayImg} alt="" className={(activeQ === data.id) || activeQ === null ? "active-slide" : ""} aria-label={`slide${index}`}/>
                     </div>
                 </div>
             ))}

@@ -6,11 +6,13 @@ const HowItWorks = () => {
 
     return (
         <div className="how-it-works">
-            <h2>How It Works</h2>
-            <div className="flex steps">
-                <Step src="images/schedule-icon.png" text="Schedule Your Pickup" testid="icon" />
-                <Step src="images/pickup-icon.png" text="We Pick Up Your Dirty Laundry" testid="icon" />
-                <Step src="images/delivery-icon.png" text="We Deliver Your Clean Clothes" testid="icon" />
+            <div className="wrapper">
+                <h2>How We Can Help You</h2>
+                <div className="flex steps">
+                    <Step icon="fa-desktop" heading="You Schedule Laundry Pickup" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut" testid="icon" />
+                    <Step icon="fa-truck" heading="We Pick Up Your Laundry" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut" testid="icon" />
+                    <Step icon="fa-tshirt" heading="We Deliver Your Clean Clothes" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut" testid="icon" />
+                </div>
             </div>
         </div>
     )

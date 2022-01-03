@@ -3,35 +3,29 @@ import { BrowserRouter } from "react-router-dom";
 import NavBar from "./NavBar";
 
 describe('Test suit for navigation elements', () => {
-    test('to check if "Home" renders on the screen', () => {
+    test('to check if "Home" renders on the screen and if the href is correct', () => {
         render(<BrowserRouter><NavBar /></BrowserRouter>);
-        const navHomeElement = screen.getByText(/home/i);
+        const navHomeElement = screen.getByRole('link', {name: /home/i});
         expect(navHomeElement).toBeInTheDocument();
+        expect(navHomeElement).toHaveAttribute('href', '/');
     });
-    test('if the Home href is correct', () => {
+    test('to check if "Services" renders on the screen and if the href is correct', () => {
         render(<BrowserRouter><NavBar /></BrowserRouter>);
-        const homeLink = screen.getByLabelText(/home link/i);
-        expect(homeLink).toHaveAttribute('href', '/');
-    });
-    test('to check if "Services" renders on the screen', () => {
-        render(<BrowserRouter><NavBar /></BrowserRouter>);
-        const navServicesElement = screen.getByText(/services/i);
+        const navServicesElement = screen.getByRole('link', {name: /services/i});
         expect(navServicesElement).toBeInTheDocument();
+        expect(navServicesElement).toHaveAttribute('href', '/services');
     });
-    test('to check if "Schedule" renders on the screen', () => {
+    test('to check if "Pricing" renders on the screen and if the href is correct', () => {
         render(<BrowserRouter><NavBar /></BrowserRouter>);
-        const navScheduleElement = screen.getByText(/schedule/i);
-        expect(navScheduleElement).toBeInTheDocument();
+        const navPricingElement = screen.getByRole('link', {name: /pricing/i});
+        expect(navPricingElement).toBeInTheDocument();
+        expect(navPricingElement).toHaveAttribute('href', '/pricing');
     });
-    test('if the Schedule href is correct', () => {
+    test('to check if "Login" renders on the screen and if the href is correct', () => {
         render(<BrowserRouter><NavBar /></BrowserRouter>);
-        const scheduleLink = screen.getByLabelText(/schedule link/i);
-        expect(scheduleLink).toHaveAttribute('href', '/login');
-    });
-    test('to check if "Contact Us" renders on the screen', () => {
-        render(<BrowserRouter><NavBar /></BrowserRouter>);
-        const navContactElement = screen.getByText(/contact us/i);
-        expect(navContactElement).toBeInTheDocument();
+        const navLoginElement = screen.getByRole('link', {name: /login/i});
+        expect(navLoginElement).toBeInTheDocument();
+        expect(navLoginElement).toHaveAttribute('href', '/login');
     });
     test('to check if logo href is correct', () => {
         render(<BrowserRouter><NavBar /></BrowserRouter>);

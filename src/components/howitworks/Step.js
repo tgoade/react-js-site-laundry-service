@@ -1,14 +1,13 @@
 import './Step.css';
 
-const Step = ({src, text, testid}) => {
+const Step = ({icon, heading, text, testid}) => {
     return (
         <>
           <div className="step">
-              <figure >
-                <img src={src} className="step--icon" alt={text} data-testid={testid} />
-              </figure>
-              <div className="step--info">
-                  <h3 className="step--text">{text}</h3>
+            <div className="step--info">
+                <i className={`fas ${icon} fa-2x`} role="img" data-testid={testid} ></i>
+                <h3 className="step--text">{heading}</h3>
+                <p>{text}</p>
               </div>
           </div>  
         </>
