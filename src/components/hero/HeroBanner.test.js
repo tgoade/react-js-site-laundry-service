@@ -7,6 +7,6 @@ describe('Test suit for hero banner', () => {
         render(<BrowserRouter><HeroBanner /></BrowserRouter>)
         const ctaButton = screen.getByRole('button');
         expect(ctaButton).toHaveTextContent(/schedule laundry service/i);
-        expect(ctaButton.classList.contains('btn--large')).toBe(true);
+        expect(ctaButton.closest('a')).toHaveAttribute('href', '/login');
     });
 });
