@@ -9,9 +9,6 @@
     box-shadow: 2px 0 10px rgb(41 44 61 / 34%);
     z-index: 100;
 }
-.navbar.sticky {
-    background-color: rgb(255 255 255 / 70%);
-}
 .navbar--container {
     display: flex;
     width: 100%;

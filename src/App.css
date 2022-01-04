@@ -68,9 +68,12 @@ h3 {
   flex-direction: row;
   justify-content: space-between;
 }
-.col-2 input {
+.col-2 div {
   width: 48%;
   display: inline-block;
+}
+label {
+  font-weight: bold;
 }
 @media (max-width: 767.98px){
 .wrapper {

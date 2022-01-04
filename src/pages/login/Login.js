@@ -30,12 +30,13 @@ const Login = () => {
           <Card title="Log In">
                 {errorLogin && <div variant="danger">{errorLogin}</div>}
                 <form onSubmit={handleSubmit}>
-                    <div id="email">
-                       
-                        <input class="form-control mb-3" placeholder="Email" type="email" ref={emailRef} required />
+                    <div>
+                        <label for="email">Email</label>
+                        <input class="form-control mb-3 mt-2" placeholder="janedoe@example.com" id="email" type="email" ref={emailRef} required />
                     </div>
-                    <div id="password">
-                        <input class="form-control mb-3" placeholder="Password" type="password" ref={passwordRef} required />
+                    <div>
+                        <label for="password">Password</label>
+                        <input class="form-control mb-3 mt-2" placeholder="Must be at least 6 characters" type="password" ref={passwordRef} required />
                     </div>
                     <button disabled={loading} className="btn--medium w-100 mt-3" type="submit">Log In</button>
                 </form>

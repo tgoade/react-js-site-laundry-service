@@ -63,12 +63,14 @@ const Signup = () => {
           <Card title="Sign Up">
                 {error && <div class="alert" variant="danger">{error}</div>}
                 <form onSubmit={handleSubmit}>
-                    <div id="email" className="mt-3" >
-                        <input type="email" class="form-control mb-3" placeholder="Email" ref={emailRef} required />
+                    <div className="mt-3" >
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control mb-3 mt-2" placeholder="janedoe@example.com" id="email" ref={emailRef} required />
                     </div>
                     <div className="mt-3" >
-                        <div id="password">
-                            <input type="password" class="form-control" placeholder="Password" ref={passwordRef} required />
+                        <div>
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control mt-2" placeholder="Must be at least 6 characters" id="password" ref={passwordRef} required />
                         </div>
                         {/* <Form.Group as={Col} id="password-confirm" >
                             <Form.Control type="password" placeholder="Password Confirmation" required />
@@ -76,12 +78,19 @@ const Signup = () => {
                     </div>
                     <div className="mt-3" >
                         <div class="col-2 mb-3">
-                            <input class="form-control" placeholder="First name" ref={firstNameRef} />
-                            <input class="form-control" placeholder="Last name" ref={lastNameRef} />
+                            <div>
+                                <label for="firstName">First Name</label>
+                                <input class="form-control mt-2" placeholder="Jane" id="firstName" ref={firstNameRef} />
+                            </div>
+                            <div>
+                                <label for="lastName">Last Name</label>
+                                <input class="form-control mt-2" placeholder="Doe" id="lastName" ref={lastNameRef} />
+                            </div>
                         </div>
                     </div>
                     <div id="phone" className="mt-3" >
-                        <input type="tel" class="form-control mb-3" maxLength="16" placeholder="Cell Phone Number" ref={phoneRef} />
+                        <label for="mobileNo">Mobile Number</label>
+                        <input type="tel" class="form-control mb-3 mt-2" maxLength="16" placeholder="999-9999" id="mobileNo" ref={phoneRef} />
                     </div>
                     <button disabled={loading} className="btn--medium w-100 mt-3" type="submit">Sign Up</button>
                 </form>

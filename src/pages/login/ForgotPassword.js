@@ -37,8 +37,9 @@ const ForgotPassword = () => {
                 {error && <div class="alert" variant="danger">{error}</div>}
                 {message && <div class="alert" variant="success">{message}</div>}
                 <form onSubmit={handleSubmit}>
-                    <div id="email">
-                        <input type="email" class="form-control" placeholder="Email" ref={emailRef} required />
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control mt-2" placeholder="Enter your email to reset password" id="email" ref={emailRef} required />
                     </div>
                     
                     <button disabled={loading} className="btn--medium w-100 mt-3" type="submit">Reset Password</button>
